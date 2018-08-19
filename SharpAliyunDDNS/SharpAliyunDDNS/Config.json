@@ -1,0 +1,15 @@
+﻿//配置文件格式:域名,主机记录,TTL值
+//AccessKeyId 阿里云给到的AccessKeyId
+//AccessKeySecret阿里云给到的AccessKeySecret
+//AccessKeyId和AccessKeySecret在访问控制 RAM获取
+//如果没有刻意购买云解析服务的ttl下限，ttl请默认填写600
+{
+  "data": [
+    "域名,主机记录,Ttl",
+    "域名,主机记录,Ttl"
+  ],
+  "Key": {
+    "AccessKeyId": "请输入AccessKeyId",
+    "AccessKeySecret": "请输入AccessKeySecret"
+  }
+}
