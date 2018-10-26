@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SharpDDNS
 {
@@ -15,11 +16,29 @@ namespace SharpDDNS
         public static bool DDNSState { set; get; }
         static void Main(string[] args)
         {
+            Dictionary<string, string> Configargs = Readargs(args);
+            string ConfigPath = null;
+            foreach (var Var in Configargs)
+            {
+                if (Var.Key == "")
+                    ConfigPath = Var.Value;
+            }
             DDNSState = true;
             string AccessKeyId = "";
             string AccessKeySecret = "";
             ConsoleX.WriteLine("开始读取配置文件");
-            string[] ConfigFile = File.ReadAllLines("Config.json");
+            string[] ConfigFile;
+            if (ConfigPath != "" && ConfigPath != null)
+            {
+                ConfigFile = File.ReadAllLines(ConfigPath);
+            }
+            else
+            {
+                if (File.Exists("Config.json"))
+                    ConfigFile = File.ReadAllLines("Config.json");
+                else
+                    ConfigFile = File.ReadAllLines(AppContext.BaseDirectory + "Config.json");
+            }
             string ConfigContent = "";
             ConsoleX.WriteLine("屏蔽注释");
             foreach (var Da in ConfigFile)
@@ -64,6 +83,23 @@ namespace SharpDDNS
             DDNSState = false;
             ccLever: Console.WriteLine("回车离开");
             Console.ReadLine();
+        }
+        public static Dictionary<string, string> Readargs(string[] args)
+        {
+            Dictionary<string, string> Return = new Dictionary<string, string>();
+            foreach (string Var in args)
+            {
+                if (Var.First() == '-')
+                {
+                    if (Var.ToCharArray()[1] == 'c')
+                        Return.Add("Path", Var.Substring(2));
+                }
+                else
+                {
+
+                }
+            }
+            return Return;
         }
     }
     public class ConsoleX

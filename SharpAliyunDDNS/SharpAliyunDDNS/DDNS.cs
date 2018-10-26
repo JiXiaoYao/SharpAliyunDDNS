@@ -26,7 +26,7 @@ namespace SharpDDNS
         public Thread thread { set; get; }
         public DDNS()
         {
-  
+
         }
 
         public void InitializeDict(string AccessKeyId, string AccessKeySecret, string DomainName, string HostRecord, string TTL)
@@ -50,7 +50,7 @@ namespace SharpDDNS
             string IP = "";
             try { IP = obj.SelectToken("$.DomainRecords.Record[?(@.RR == '" + HostRecord + "')].Value").Value<string>(); } catch { IP = null; goto cc; }
             RecordId = obj.SelectToken("$.DomainRecords.Record[?(@.RR == '" + HostRecord + "')].RecordId").Value<string>();
-            cc: return IP;
+        cc: return IP;
         }
         public void Add(string IP)
         {
@@ -91,6 +91,28 @@ namespace SharpDDNS
                     IP = jk.Value.ToString();
             return IP;
         }
+        public string GetlocalhostIPreload1()
+        {
+            string tempip = "";
+            try
+            {
+                WebRequest wr = WebRequest.Create("http://www.ip138.com/ips138.asp");
+                Stream s = wr.GetResponse().GetResponseStream();
+                StreamReader sr = new StreamReader(s, Encoding.Default);
+                string all = sr.ReadToEnd(); //读取网站的数据
+
+                int start = all.IndexOf("您的IP地址是：[") + 9;
+                int end = all.IndexOf("]", start);
+                tempip = all.Substring(start, end - start);
+                sr.Close();
+                s.Close();
+            }
+            catch
+            {
+               
+            }
+            return tempip;
+        }
         public void Start()
         {
             //ConsoleX.WriteLine("");
@@ -98,12 +120,12 @@ namespace SharpDDNS
             LastIP = "Null";
             Thread thread = new Thread(new ThreadStart(() =>
             {
-                reset: ConsoleX.WriteLine("域名：" + HostRecord + "." + DomainName + "的DDNS已启动");
+            reset: ConsoleX.WriteLine("域名：" + HostRecord + "." + DomainName + "的DDNS已启动");
                 ConsoleX.WriteLine("开始第一次查询IP", HostRecord + "." + DomainName);
                 while (Program.DDNSState)
                 {
                     string IP = "";
-                    try { IP = GetlocalhostIP(); } catch { ConsoleX.WriteLine("IP获取发生错误，一分钟后即将重试", HostRecord + "." + DomainName); goto rewait; }
+                    try { IP = GetlocalhostIP(); } catch { ConsoleX.WriteLine("IP获取发生错误，一分钟后即将重试", HostRecord + "." + DomainName); GC.Collect(); goto rewait; }
                     if (IP != LastIP)
                     {
                         try
@@ -117,7 +139,7 @@ namespace SharpDDNS
                             {
                                 ConsoleX.WriteLine("未获取到解析记录，准备添加解析记录", HostRecord + "." + DomainName); goto cc;
                             }
-                            cc: if (DnsIP == null)
+                        cc: if (DnsIP == null)
                             {
                                 ConsoleX.WriteLine("未获取到解析记录，准备添加解析记录", HostRecord + "." + DomainName);
                                 Add(IP);
@@ -151,7 +173,7 @@ namespace SharpDDNS
                             Console.ResetColor();
                         }
                     }
-                    rewait: for (int i = 0; i < 60; i++)
+                rewait: for (int i = 0; i < 60; i++)
                         if (Program.DDNSState)
                             Thread.Sleep(1000);
                         else
@@ -200,7 +222,7 @@ namespace SharpDDNS
             return null;
         }
 
-        
+
     }
     public class GetPostString
     {

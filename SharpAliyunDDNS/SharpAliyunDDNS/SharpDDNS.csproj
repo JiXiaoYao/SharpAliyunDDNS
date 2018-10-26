@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>SharpAliyunDDNS</AssemblyName>
     <StartupObject>SharpDDNS.Program</StartupObject>
+    <Authors>姬逍遥</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -19,5 +20,7 @@
       <HintPath>System</HintPath>
     </Reference>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties Config_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
