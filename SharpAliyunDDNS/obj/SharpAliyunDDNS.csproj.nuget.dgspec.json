@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj": {}
+    "C:\\Users\\16668\\Source\\Repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj": {
+    "C:\\Users\\16668\\Source\\Repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj",
+        "projectUniqueName": "C:\\Users\\16668\\Source\\Repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj",
         "projectName": "SharpAliyunDDNS",
-        "projectPath": "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj",
+        "projectPath": "C:\\Users\\16668\\Source\\Repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj",
         "packagesPath": "C:\\Users\\16668\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\obj\\",
+        "outputPath": "C:\\Users\\16668\\Source\\Repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Microsoft\\Xamarin\\NuGet\\",
