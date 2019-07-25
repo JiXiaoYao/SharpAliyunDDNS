@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj",
+        "projectName": "SharpAliyunDDNS",
+        "projectPath": "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\SharpAliyunDDNS.csproj",
+        "packagesPath": "C:\\Users\\16668\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\16668\\source\\repos\\SharpAliyunDDNS\\SharpAliyunDDNS\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\16668\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.All": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
